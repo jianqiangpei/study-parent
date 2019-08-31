@@ -1,0 +1,18 @@
+server:
+  port: 8103
+
+spring:
+  application:
+    name: study-order
+  profiles:
+    active: @spring.profiles.active@
+
+study:
+  swagger:
+    instance:
+      api-info:
+        title: 订单
+        description: 订单描述
+        version: @version@
+        default-include-pattern: /rest/.*
+
