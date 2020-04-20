@@ -15,6 +15,7 @@
       <module>study-gateway</module>
     <module>study-api</module>
     <module>study-config-server</module>
+    <module>study-auth</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -68,6 +69,7 @@
 
   <build>
     <resources>
+
       <resource>
         <directory>${basedir}/src/main/resources</directory>
         <filtering>true</filtering>
@@ -76,19 +78,31 @@
           <include>**/config/bootstrap*.yml</include>
         </includes>
       </resource>
+
+      <resource>
+        <directory>${basedir}/src/main/resources</directory>
+        <filtering>false</filtering>
+        <includes>
+          <include>**/*.jks</include>
+        </includes>
+      </resource>
+
       <resource>
         <directory>${basedir}/src/main/resources</directory>
         <excludes>
           <exclude>**/config/application*.yml</exclude>
           <exclude>**/config/bootstrap*.yml</exclude>
+          <exclude>**/*.jks</exclude>
         </excludes>
       </resource>
+
       <resource>
         <directory>.</directory>
         <includes>
           <include>lib/*</include>
         </includes>
       </resource>
+
     </resources>
   </build>
 
@@ -101,6 +115,8 @@
       <properties>
         <logback.loglevel>DEBUG</logback.loglevel>
         <spring.profiles.active>dev</spring.profiles.active>
+        <spring.profies.consul.host>10.211.55.12</spring.profies.consul.host>
+        <spring.profies.consul.port>8500</spring.profies.consul.port>
       </properties>
     </profile>
     <profile>

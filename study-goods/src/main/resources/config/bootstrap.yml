@@ -1,0 +1,43 @@
+server:
+  port: 8889
+
+spring:
+  application:
+    name: study-auth
+  profiles:
+    active: @spring.profiles.active@
+  cloud:
+    consul:
+      host: @spring.profies.consul.host@
+      port: @spring.profies.consul.port@
+      discovery:
+        enabled: true
+        service-name: ${spring.application.name}
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+        health-check-interval: 5s
+        prefer-ip-address: true
+        health-check-critical-timeout: 10s
+        health-check-path: /actuator/health
+        tags: dev
+        port: ${server.port}
+      config:
+        prefix: config
+        enabled: true
+        format: YAML
+        data-key: user
+
+security:
+  oauth2:
+    resource:
+      ## 配置授权服务器获取用户信息
+      user-info-uri: http://localhost:8888/user/info
+      token-info-uri: http://localhost:8888/oauth/check_token
+    client:
+      client-id: web
+      client-secret: web-secret
+      access-token-uri: http://localhost:8888/oauth/token
+      grant-type: password
+      scope: web
+    authorization:
+      check-token-access: http://localhost:8888/oauth/check_token
+

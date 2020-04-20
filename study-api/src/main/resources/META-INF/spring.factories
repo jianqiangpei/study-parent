@@ -1,3 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.study.api.config.StudyFeignConfiguration,\
-  com.study.api.client.order.OrderApiClient
+  com.study.api.config.StudyFeignConfiguration

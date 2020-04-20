@@ -1,0 +1,15 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: study-config-server
+  profiles:
+    active: @spring.profiles.active@
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jianqiangpei/study-resources
+          timeout: 5
+          search-paths: '{application}'

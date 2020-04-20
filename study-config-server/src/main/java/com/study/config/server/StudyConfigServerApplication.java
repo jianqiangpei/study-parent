@@ -2,10 +2,10 @@ package com.study.config.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
 @SpringBootApplication
-@RestController
+@EnableConfigServer
 public class StudyConfigServerApplication {
 
     public static void main(String[] args) {

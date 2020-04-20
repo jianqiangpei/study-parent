@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    consul:
+      host: 10.211.55.6
+      port: 8500
+      discovery:
+        enabled: true
+        service-name: ${spring.application.name}
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+        health-check-interval: 5s
+        prefer-ip-address: true
+        health-check-critical-timeout: 10s
+        health-check-path: /actuator/health
+        tags: dev
+        port: ${server.port}
+      config:
+        prefix: config
+        enabled: true
+        format: YAML
+        data-key: user
