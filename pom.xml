@@ -16,6 +16,7 @@
     <module>study-api</module>
     <module>study-config-server</module>
     <module>study-auth</module>
+      <module>study-reactive</module>
   </modules>
   <packaging>pom</packaging>
 

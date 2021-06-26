@@ -13,6 +13,8 @@ spring:
         health-check-path: /actuator/health
         tags: dev
         port: ${server.port}
+        heartbeat:
+          enabled: true
       config:
         prefix: config
         enabled: true

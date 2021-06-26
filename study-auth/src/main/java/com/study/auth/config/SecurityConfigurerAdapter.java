@@ -45,21 +45,6 @@ public class SecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
 
     }
 
-//
-//
-//
-//
-//    @Bean
-//    public UserDetailsService userDetailsService(){
-//
-//        InMemoryUserDetailsManager inMemoryUserDetailsManager = new InMemoryUserDetailsManager();
-//        UserDetails user1 = new User("admin" , "123456" , new HashSet<>());
-//        UserDetails user2 = new User("alex" , "123456" , new HashSet<>());
-//        inMemoryUserDetailsManager.createUser(user1);
-//        inMemoryUserDetailsManager.createUser(user2);
-//
-//        return inMemoryUserDetailsManager;
-//    }
 
     /**
      * 拦截配置

@@ -44,7 +44,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-//        super.configure(resources);
         resources
                 .authenticationEntryPoint(customAuthEntryPoint)
                 .accessDeniedHandler(customAccessDeniedHandler);
